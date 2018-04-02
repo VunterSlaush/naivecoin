@@ -5,16 +5,16 @@ block content
         .container
             .level
                 .level-left
-                    h2.title.is-3 Unconfirmed Transactions
+                    h2.title.is-3 Transacciones sin confirmar
             hr
             table.table.is-fullwidth.is-hoverable
                 thead
                     tr
                         th ID
                         th Hash
-                        th Type
-                        th Inputs
-                        th Outputs
+                        th Tipo
+                        th Entrada
+                        th Salida
                 tbody
                     each transaction in transactions                    
                         tr(onClick=`toggle_visibility( '${transaction.id}' )`, style="cursor: pointer")
@@ -37,15 +37,15 @@ block content
                                                 p
                                                     span.icon
                                                         i.fas.fa-arrow-right(data-fa-transform="rotate-45")
-                                                    | Address
+                                                    | Direccion
                                                     code.tooltip #{formatters.hash(input.address)}
                                                         span.tooltiptext #{input.address}
-                                                    | From transaction
+                                                    | De La Transaccion
                                                     code.tooltip #{formatters.hash(input.transaction)} : #{input.index}
                                                         span.tooltiptext #{input.transaction}                                                    
-                                                    | Amount
+                                                    | Cantidad
                                                     code #{formatters.amount(input.amount)}
-                                                    | Signature
+                                                    | Firma
                                                     code #{formatters.hash(input.signature)}
                                         .column
                                             .title.is-4 Outputs                                            
@@ -53,8 +53,8 @@ block content
                                                 p
                                                     span.icon
                                                         i.fas.fa-arrow-right(data-fa-transform="rotate-320")
-                                                    | Address
+                                                    | Direccion
                                                     code.tooltip #{formatters.hash(output.address)}
                                                         span.tooltiptext #{output.address}                                                    
-                                                    | Amount
+                                                    | Cantidad
                                                     code #{formatters.amount(output.amount)}

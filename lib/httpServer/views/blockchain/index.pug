@@ -8,10 +8,10 @@ block content
                     h2.title.is-3 Blockchain
                 .level-right
                     .tags.has-addons
-                        span.tag Type
+                        span.tag Tipo
                         span.tag.is-primary Regular
-                        span.tag.is-warning Fee
-                        span.tag.is-danger Reward
+                        span.tag.is-warning Impuesto
+                        span.tag.is-danger Recompensa
             hr
             .columns.is-multiline
                 each block in blocks                    
@@ -19,7 +19,7 @@ block content
                             .box
                                 .content.is-small
                                     p.title.is-4
-                                        | Block 
+                                        | Bloque 
                                         small ##{block.index}
                                     p.subtitle.is-6
                                         | Hash: 
@@ -28,7 +28,7 @@ block content
                                             span.tooltiptext #{block.hash}                                            
                                         if block.index > 0
                                             br                                                
-                                            | Previous: 
+                                            | Anterior: 
                                             code.tooltip
                                                 | #{formatters.hash(block.previousHash)}
                                                 span.tooltiptext #{block.previousHash}                                                
@@ -45,7 +45,7 @@ block content
                                                                     span.icon.has-text-white
                                                                         i.fas.fa-arrow-right(data-fa-transform="rotate-45")
                                                                     | #{formatters.amount(input.amount)}
-                                                                    |  from 
+                                                                    |  Desde 
                                                                     code.tooltip
                                                                         | #{formatters.hash(input.address)}
                                                                         span.tooltiptext #{input.address}
@@ -56,7 +56,7 @@ block content
                                                                     span.icon.has-text-white
                                                                         i.fas.fa-arrow-right(data-fa-transform="rotate-320")
                                                                     | #{formatters.amount(output.amount)}
-                                                                    |  to 
+                                                                    |  Hasta 
                                                                     code.tooltip
                                                                         | #{formatters.hash(output.address)}
                                                                         span.tooltiptext #{output.address}
